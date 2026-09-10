@@ -14,3 +14,6 @@ Route::get('/login', function () {
 Route::get('/syarat-ketentuan', function () {
     return view('syarat-ketentuan');
 })->name('syarat-ketentuan');
+Route::get('/cara-sewa', function () {
+    return view('cara-sewa');
+})->name('cara-sewa');
