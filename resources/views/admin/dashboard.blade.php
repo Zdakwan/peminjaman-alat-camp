@@ -78,10 +78,13 @@
                     ALAT TERSEDIA
                 </span>
 
-                <h2>124 <small>alat</small></h2>
+                <h2>
+                    {{ $alatTersedia }}
+                    <small>alat</small>
+                </h2>
 
                 <span class="stat-description">
-                    18 alat sedang disewa
+                    {{ $alatDisewa }} alat sedang disewa
                 </span>
 
             </div>
