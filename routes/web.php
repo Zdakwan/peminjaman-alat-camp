@@ -11,3 +11,6 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/syarat-ketentuan', function () {
+    return view('syarat-ketentuan');
+})->name('syarat-ketentuan');
