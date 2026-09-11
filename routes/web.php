@@ -21,3 +21,6 @@ Route::get('/cara-sewa', function () {
 Route::get('/pusat-bantuan', function () {
     return view('pusat-bantuan');
 });
+Route::get('/kontak', function () {
+    return view('kontak');
+})->name('kontak');
