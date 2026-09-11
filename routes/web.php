@@ -18,3 +18,6 @@ Route::get('/syarat-ketentuan', function () {
 Route::get('/cara-sewa', function () {
     return view('cara-sewa');
 })->name('cara-sewa');
+Route::get('/pusat-bantuan', function () {
+    return view('pusat-bantuan');
+});
