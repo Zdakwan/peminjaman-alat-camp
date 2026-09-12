@@ -43,10 +43,10 @@
 
             <!-- Input Nama Lengkap -->
            <div>
-                <label for="nama" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
+                <label for="name" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
                     NAMA LENGKAP
                 </label>
-                <input type="text" id="nama" name="nama" value="{{ old('nama') }}" placeholder="John Doe" required autofocus
+                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="John Doe" required autofocus
                 class="w-full bg-[#0f172a] text-gray-200 placeholder-gray-500 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#00a86b] border border-transparent">
             </div>
 

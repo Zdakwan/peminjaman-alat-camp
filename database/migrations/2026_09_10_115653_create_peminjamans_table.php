@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('peminjamans', function (Blueprint $table) {
@@ -27,13 +24,15 @@ return new class extends Migration
 
             $table->decimal('total_bayar', 12, 2);
             $table->string('status_peminjaman')->default('menunggu');
-             $table->timestamps();
+            $table->timestamps();
+
+            // Definisi Foreign Key (Secara spesifik menunjuk ke id_user, id_barang, dan id_admin)
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('id_barang')->references('id_barang')->on('barangs')->onDelete('restrict');
+            $table->foreign('id_admin')->references('id_admin')->on('admins')->onDelete('restrict');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('peminjamans');
