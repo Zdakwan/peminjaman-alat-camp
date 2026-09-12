@@ -128,21 +128,26 @@
 
 
             {{-- LOGOUT --}}
-            <div class="sidebar-bottom">
+<div class="sidebar-bottom">
 
-                <a href="#" class="logout">
+    <form action="{{ route('admin.logout') }}" method="POST">
+        @csrf
 
-                    <svg viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path d="M10 17l5-5-5-5"/>
-                        <path d="M15 12H3"/>
-                        <path d="M21 3v18"/>
-                    </svg>
+        <button type="submit" class="logout">
 
-                    <span>Keluar</span>
-                </a>
+            <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M10 17l5-5-5-5"/>
+                <path d="M15 12H3"/>
+                <path d="M21 3v18"/>
+            </svg>
 
-            </div>
+            <span>Keluar</span>
+        </button>
+
+    </form>
+
+</div>
 
         </aside>
 

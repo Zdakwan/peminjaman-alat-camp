@@ -141,6 +141,20 @@ a {
     height: 11px;
 }
 
+.sidebar-bottom form {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-bottom button.logout {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
 
 /* =========================
    MAIN

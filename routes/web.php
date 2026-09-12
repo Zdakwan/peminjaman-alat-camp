@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
@@ -9,11 +10,17 @@ use App\Http\Controllers\Admin\BarangController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Halaman Publik / Katalog
-|--------------------------------------------------------------------------
-*/
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+        ->name('admin.dashboard');
+
+    Route::resource('/admin/barang', BarangController::class)
+        ->names('admin.barang');
+
+    Route::resource('/admin/admins', AdminController::class)
+        ->except(['show'])
+        ->names('admin.admins');
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/katalog/cari', [HomeController::class, 'search'])->name('katalog.search');
