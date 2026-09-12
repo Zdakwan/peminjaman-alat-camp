@@ -6,6 +6,21 @@ use App\Http\Controllers\Admin\DashboardController;
 Route::get('/', function () {
     return redirect()->route('admin.dashboard');
 });
-
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])
-    ->name('admin.dashboard');
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/syarat-ketentuan', function () {
+    return view('syarat-ketentuan');
+})->name('syarat-ketentuan');
+Route::get('/cara-sewa', function () {
+    return view('cara-sewa');
+})->name('cara-sewa');
+Route::get('/pusat-bantuan', function () {
+    return view('pusat-bantuan');
+});
+Route::get('/kontak', function () {
+    return view('kontak');
+})->name('kontak');
