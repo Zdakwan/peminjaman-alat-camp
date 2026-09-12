@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BarangController;
@@ -8,20 +10,15 @@ use App\Http\Controllers\Admin\BarangController;
 
 /*
 |--------------------------------------------------------------------------
-| Dashboard
+| Halaman Publik / Katalog
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return redirect()->route('admin.dashboard');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/katalog/cari', [HomeController::class, 'search'])->name('katalog.search');
+Route::get('/produk/{id}', [HomeController::class, 'show'])->name('produk.show');
+Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
 
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/login', function () {
-    return view('login');
-});
 Route::get('/syarat-ketentuan', function () {
     return view('syarat-ketentuan');
 })->name('syarat-ketentuan');
@@ -57,5 +54,4 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 require __DIR__.'/auth.php';
