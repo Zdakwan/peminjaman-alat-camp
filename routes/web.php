@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BarangController;
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 
 
 /*
@@ -32,18 +33,31 @@ Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak');
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])
-    ->name('admin.dashboard');
+
+/*
+|--------------------------------------------------------------------------
+| Admin
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+        ->name('admin.dashboard');
+
+    Route::resource('/admin/barang', BarangController::class)
+        ->names('admin.barang');
+});
 
 
 /*
 |--------------------------------------------------------------------------
-| Kelola Alat / Barang
+| Area Setelah Login (User)
 |--------------------------------------------------------------------------
 */
-
-Route::resource('/admin/barang', BarangController::class)
-    ->names('admin.barang');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -54,4 +68,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 require __DIR__.'/auth.php';

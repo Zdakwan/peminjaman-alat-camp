@@ -27,24 +27,7 @@ return new class extends Migration
 
             $table->decimal('total_bayar', 12, 2);
             $table->string('status_peminjaman')->default('menunggu');
-
-            // Foreign Key
-            $table->foreign('id_user')
-                ->references('id_user')
-                ->on('users')
-                ->onDelete('restrict');
-
-            $table->foreign('id_barang')
-                ->references('id_barang')
-                ->on('barangs')
-                ->onDelete('restrict');
-
-            $table->foreign('id_admin')
-                ->references('id_admin')
-                ->on('admins')
-                ->onDelete('restrict');
-
-            $table->timestamps();
+             $table->timestamps();
         });
     }
 
