@@ -36,8 +36,9 @@
             {{-- MENU --}}
             <nav class="sidebar-menu">
 
+                {{-- DASHBOARD --}}
                 <a href="{{ route('admin.dashboard') }}"
-                    class="menu-item active">
+                    class="menu-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
 
                     <span class="menu-icon">
                         <svg viewBox="0 0 24 24" fill="none"
@@ -52,7 +53,10 @@
                     <span>Dashboard</span>
                 </a>
 
-                <a href="#" class="menu-item">
+
+                {{-- KELOLA ALAT --}}
+                <a href="{{ route('admin.barang.index') }}"
+                    class="menu-item {{ request()->routeIs('admin.barang.*') ? 'active' : '' }}">
 
                     <span class="menu-icon">
                         <svg viewBox="0 0 24 24" fill="none"
@@ -68,6 +72,8 @@
                     <span>Kelola Alat</span>
                 </a>
 
+
+                {{-- TRANSAKSI --}}
                 <a href="#" class="menu-item">
 
                     <span class="menu-icon">
@@ -84,6 +90,8 @@
                     <span>Transaksi</span>
                 </a>
 
+
+                {{-- PELANGGAN --}}
                 <a href="#" class="menu-item">
 
                     <span class="menu-icon">
@@ -97,6 +105,8 @@
                     <span>Pelanggan</span>
                 </a>
 
+
+                {{-- LAPORAN --}}
                 <a href="#" class="menu-item">
 
                     <span class="menu-icon">
@@ -115,6 +125,7 @@
                 </a>
 
             </nav>
+
 
             {{-- LOGOUT --}}
             <div class="sidebar-bottom">
