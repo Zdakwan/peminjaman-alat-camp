@@ -472,3 +472,565 @@ td strong {
     }
 
 }
+
+/* =========================================================
+   KELOLA ALAT
+========================================================= */
+
+.barang-container {
+    padding: 28px 25px;
+    max-width: 1600px;
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.barang-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.barang-header h1 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: #f1f5fb;
+}
+
+.barang-header p {
+    color: #65738a;
+    font-size: 10px;
+}
+
+.tanggal-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #111c30;
+    border: 1px solid #253550;
+    color: #aab5c7;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 9px;
+}
+
+.tanggal-badge svg {
+    width: 12px;
+    height: 12px;
+    color: #00d6a3;
+}
+
+
+/* =========================
+   ALERT
+========================= */
+
+.barang-alert {
+    padding: 10px 13px;
+    border-radius: 7px;
+    margin-bottom: 12px;
+    font-size: 9px;
+}
+
+.barang-alert.success {
+    background: #073e37;
+    border: 1px solid #0a675b;
+    color: #00d6a3;
+}
+
+.barang-alert.error {
+    background: #431827;
+    border: 1px solid #6d243d;
+    color: #ff6b82;
+}
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+.stat-icon.warning {
+    background: #493700;
+    color: #ffc400;
+}
+
+.stok-warning-text {
+    font-size: 8px;
+    color: #e5ad00;
+}
+
+
+/* =========================
+   BARANG CARD
+========================= */
+
+.barang-card {
+    overflow: hidden;
+}
+
+.barang-card-header {
+    min-height: 57px;
+    padding: 13px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #24334d;
+}
+
+.barang-card-header h3 {
+    font-size: 12px;
+    color: #e7edf7;
+}
+
+
+/* =========================
+   BUTTON TAMBAH
+========================= */
+
+.btn-tambah {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #08d3a4;
+    color: #06131b;
+    border-radius: 6px;
+    padding: 8px 13px;
+    font-size: 9px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-tambah:hover {
+    background: #00e0ad;
+    box-shadow: 0 5px 15px rgba(0, 214, 163, 0.15);
+}
+
+.btn-tambah svg {
+    width: 11px;
+    height: 11px;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.barang-filter {
+    display: flex;
+    gap: 7px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #24334d;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 11px;
+    border: 1px solid #263852;
+    border-radius: 6px;
+    background: #0d1728;
+}
+
+.search-box svg {
+    width: 12px;
+    height: 12px;
+    color: #7c8aa0;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #dbe3ef;
+    font-size: 9px;
+}
+
+.search-box input::placeholder {
+    color: #66758b;
+}
+
+.filter-select {
+    width: 145px;
+    height: 33px;
+    padding: 0 10px;
+    background: #0d1728;
+    border: 1px solid #263852;
+    border-radius: 6px;
+    color: #7f8ca0;
+    outline: none;
+    font-size: 9px;
+}
+
+.filter-select:focus,
+.search-box:focus-within {
+    border-color: #00b991;
+}
+
+.btn-filter {
+    height: 33px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 6px;
+    background: #111c30;
+    border: 1px solid #263852;
+    color: #aeb9ca;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+.btn-filter:hover {
+    color: #00d6a3;
+    border-color: #00d6a3;
+}
+
+
+/* =========================
+   TABLE BARANG
+========================= */
+
+.barang-table {
+    min-width: 950px;
+}
+
+.barang-table th {
+    height: 38px;
+    padding: 8px 10px;
+    white-space: nowrap;
+}
+
+.barang-table td {
+    padding: 8px 10px;
+    height: 57px;
+    white-space: nowrap;
+}
+
+.barang-table tbody tr {
+    transition: 0.15s;
+}
+
+.barang-table tbody tr:hover {
+    background: #142036;
+}
+
+.check-column {
+    width: 35px;
+    text-align: center !important;
+}
+
+.barang-table input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    accent-color: #00d6a3;
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.barang-photo {
+    width: 43px;
+    height: 43px;
+    background: #f1f3f6;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barang-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.barang-photo.no-photo {
+    background: #f1f3f6;
+    color: #7d8795;
+}
+
+.barang-photo.no-photo svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =========================
+   NAMA ALAT
+========================= */
+
+.barang-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.barang-name strong {
+    color: #e1e8f2;
+    font-size: 8px;
+}
+
+.barang-name span {
+    color: #59677d;
+    font-size: 7px;
+}
+
+
+/* =========================
+   KATEGORI
+========================= */
+
+.kategori-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #073e37;
+    border: 1px solid #096c5e;
+    color: #00d6a3;
+    font-size: 7px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   HARGA
+========================= */
+
+.harga {
+    color: #aeb9c9;
+    font-size: 8px;
+}
+
+
+/* =========================
+   STATUS BARANG
+========================= */
+
+.barang-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 7px;
+    font-weight: 600;
+}
+
+.barang-status.tersedia {
+    background: #073e37;
+    color: #00d6a3;
+    border: 1px solid #096c5e;
+}
+
+.barang-status.menipis {
+    background: #493700;
+    color: #ffc400;
+    border: 1px solid #745900;
+}
+
+.barang-status.habis {
+    background: #451829;
+    color: #ff5570;
+    border: 1px solid #68233d;
+}
+
+
+/* =========================
+   ACTION BUTTON
+========================= */
+
+.barang-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.barang-actions form {
+    margin: 0;
+    padding: 0;
+}
+
+.action-btn {
+    width: 31px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.action-btn svg {
+    width: 12px;
+    height: 12px;
+}
+
+.action-btn.detail {
+    background: #17263b;
+    border: 1px solid #263852;
+    color: #aebbd0;
+}
+
+.action-btn.detail:hover {
+    color: #ffffff;
+    border-color: #526887;
+}
+
+.action-btn.edit {
+    background: #063b37;
+    border: 1px solid #096c5e;
+    color: #00d6a3;
+}
+
+.action-btn.edit:hover {
+    background: #074c45;
+}
+
+.action-btn.delete {
+    background: #42172a;
+    border: 1px solid #68233d;
+    color: #ff5570;
+}
+
+.action-btn.delete:hover {
+    background: #542037;
+}
+
+
+/* =========================
+   EMPTY DATA
+========================= */
+
+.empty-data {
+    text-align: center !important;
+    padding: 45px 15px !important;
+    color: #69768c !important;
+}
+
+
+/* =========================
+   FOOTER & PAGINATION
+========================= */
+
+.barang-footer {
+    min-height: 45px;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barang-total {
+    color: #59677d;
+    font-size: 8px;
+}
+
+.barang-pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.page-btn {
+    min-width: 25px;
+    height: 25px;
+    padding: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #17243a;
+    color: #8795aa;
+    font-size: 8px;
+    border: 1px solid transparent;
+}
+
+.page-btn:hover {
+    color: #00d6a3;
+    border-color: #00d6a3;
+}
+
+.page-btn.active {
+    background: #08d3a4;
+    color: #06131b;
+    font-weight: 700;
+}
+
+.page-btn.disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+
+/* =========================
+   RESPONSIVE BARANG
+========================= */
+
+@media (max-width: 1000px) {
+
+    .barang-filter {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        min-width: 100%;
+    }
+
+    .filter-select {
+        flex: 1;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .barang-container {
+        padding: 20px 15px;
+    }
+
+    .barang-header {
+        gap: 15px;
+    }
+
+    .barang-header h1 {
+        font-size: 20px;
+    }
+
+    .tanggal-badge {
+        display: none;
+    }
+
+    .barang-card-header {
+        gap: 10px;
+    }
+
+    .barang-filter {
+        flex-direction: column;
+    }
+
+    .filter-select,
+    .btn-filter {
+        width: 100%;
+    }
+
+    .barang-footer {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
